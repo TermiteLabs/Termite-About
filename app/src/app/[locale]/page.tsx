@@ -1,9 +1,13 @@
-export default function Home({ params } : { params: { locale: string} }) {
-    const locale = params.locale;
+'use client';
+
+import {useTranslations} from "use-intl";
+
+export default function Home() {
+    const n = useTranslations('nav');
 
     return (
         <div>
-            <NavigationBar />
+            {n('greeting')}
         </div>
     )
 }
